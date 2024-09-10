@@ -26,7 +26,11 @@ class Customer {
        FROM customers
        ORDER BY last_name, first_name`
     );
-    return results.rows.map(c => new Customer(c));
+    return results.rows.map((c) => new Customer(c));
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
   }
 
   /** get a customer by ID. */
